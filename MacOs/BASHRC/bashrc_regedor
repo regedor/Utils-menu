@@ -1,0 +1,17 @@
+# SSH conections
+alias do-ssh-aeronave="ssh server.regedor.com -p 3022"
+alias do-ssh-gavetas="ssh gavetas.regedor.com"
+alias do-ssh-ruigoncalo="ssh dude@ruigoncalo.homeip.net -p 3022"
+alias do-ssh-sapo="ssh migalbie@cardsorting.ensinolivre.pt"
+alias do-ssh-shellfy="ssh 194.65.94.52"
+
+# Git clone from aeronove 
+do-git-clone-from-aeronave() {
+  git clone ssh://server.regedor.com:3022/~/Projects/$1
+}
+
+# Applications Alias
+#export CLASSPATH=.:$UTILS_PROJECT_PATH/Applications/antlrworks-1.3.jar:$CLASSPATH
+#alias trang="java -jar $UTILS_PROJECT_PATH/Applications/trang-20090818/trang.jar"
+#alias iclojure="rlwrap java -cp ~/.clojure/clojure.jar clojure.lang.Repl"
+#alias solrstart="(cd /opt/apachesolr1.4.0/example/; java -jar start.jar &>/dev/null &)"
