@@ -43,8 +43,8 @@ sudo gem install --no-rdoc --no-ri rspec-rails
 sudo gem install --no-rdoc --no-ri cucumber
 sudo gem install --no-rdoc --no-ri factory_girl
 sudo gem install --no-rdoc --no-ri email_spec
-#sudo gem install --no-rdoc --no-ri  thoughtbot-factory_girl --source http://gems.github.com
-#sudo gem install --no-rdoc --no-ri  bmabey-email_spec --source http://gems.github.com
+sudo gem install --no-rdoc --no-ri thoughtbot-factory_girl --source http://gems.github.com
+sudo gem install --no-rdoc --no-ri bmabey-email_spec --source http://gems.github.com
 sudo gem install --no-rdoc --no-ri autotest-rails
 sudo gem install --no-rdoc --no-ri configatron
 sudo gem install --no-rdoc --no-ri will_paginate
@@ -54,6 +54,13 @@ sudo gem install --no-rdoc --no-ri coderay
 sudo gem install --no-rdoc --no-ri lesstile
 sudo gem install --no-rdoc --no-ri fastercsv
 sudo gem install --no-rdoc --no-ri spreadsheet-excel
+sudo gem install --no-rdoc --no-ri cucumber-rails
+sudo gem install --no-rdoc --no-ri database_cleaner
+
+sudo gem install --no-rdoc --no-ri authlogic
+sudo gem install --no-rdoc --no-ri authlogic-oid
+sudo gem install --no-rdoc --no-ri ruby-openid
+sudo gem install --no-rdoc --no-ri post_commit
 
 
 sudo gem list
