@@ -1,0 +1,33 @@
+scripts:
+    - script:
+        name: List 1 (submenu)
+        description: ...
+        scripts:
+            - script:
+                name: Script 1.1
+                description: ...
+                path: ror_setup01.sh
+            - script:
+                name: Script 1.2
+                description: ...
+                path: install_notifier.sh
+    - script:
+        name: Script 2
+        description: ...
+        path: killit.sh
+    - script:
+        name: Script 3
+        description: ...
+        path: noweb2pdf.sh
+    - script:
+        name: Script 4
+        description: ...
+        path: silver_backup.sh
+    - script:
+        name: Script 5
+        description: ...
+        path: swap_resolution.sh
+    - script:
+        name: Script não perigoso Mac
+        description: ...
+        path: lol.sh
