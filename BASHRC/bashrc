@@ -26,7 +26,7 @@ export PATH=.:$PATH
 #alias solrstart="(cd /opt/apachesolr1.4.0/example/; java -jar start.jar &>/dev/null &)"
 
 # Ruby on Rails
-alias db_reborn="rake db:migrate:reset && rake db:seed"
+alias db_reborn="rake db:migrate:reset && rake db:seed && rake db:test:clone"
 alias ss_stop='kill -9 $(ps -A n | grep "[^]] ruby script/server" | egrep "^\s*[0-9]+" -o)'
 alias ultimate_reborn='ss_stop ; rake db:migrate:reset && rake db:seed && ruby script/server -d && rake jobs:work'
 alias rjw="rake jobs:work"
