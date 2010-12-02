@@ -1,0 +1,6 @@
+A bash script menu to install and configure some utilities:
+ - configure .bashrc
+ - configure .vim and .vimrc
+ - install ruby, Ruby on Rails and several used gems
+ 
+Linux and MacOS supported.

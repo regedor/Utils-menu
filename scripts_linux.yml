@@ -2,19 +2,24 @@ scripts:
     - script:
         name: Copy(replace) vim files.
         description: ...
-        path: linux1.sh
+        path_linux: linux/linux1.sh
+        path_mac: not_implemented.sh
+    
     - script:
         name: Copy(replace) all HOME files.
         description: ...
-        path: linux2.sh
+        path_linux: linux/linux2.sh
+        path_mac: not_implemented.sh
     - script:
         name: Install Ruby on Rails (and dependencies).
         description: ...
-        path: linux3.sh
+        path_linux: linux/linux3.sh
+        path_mac: not_implemented.sh
     - script:
         name: Edit bashrc file.
         description: ...
-        path: linux4.sh
+        path_linux: linux/linux4.sh
+        path_mac: not_implemented.sh
     - script:
         name: Teste sub-menu
         description: ...
@@ -22,8 +27,10 @@ scripts:
             - script:
                 name: Sub cenas 1
                 description: ...
-                path: non_exist1
+                path_linux: non_exist1
+                path_mac: not_implemented.sh
             - script:
                 name: Sub cenas 2
                 description: ...
-                path: non_exist2
+                path_linux: non_exist2
+                path_mac: not_implemented.sh
