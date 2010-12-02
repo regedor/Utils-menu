@@ -1,12 +1,12 @@
 scripts:
     - script:
-        name: Copy(replace) vim files.
+        name: Copy (replace) vim files.
         description: ...
         path_linux: linux/linux1.sh
         path_mac: not_implemented.sh
     
     - script:
-        name: Copy(replace) all HOME files.
+        name: Copy (replace) all HOME files.
         description: ...
         path_linux: linux/linux2.sh
         path_mac: not_implemented.sh
