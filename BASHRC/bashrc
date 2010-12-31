@@ -19,6 +19,16 @@ alias up5="cd ../../../../.."
 alias up6="cd ../../../../../.."
 export PATH=.:$PATH
 
+# Git Alias
+alias gst='git status'
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff | mate'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gb='git branch'
+alias gba='git branch -a'
+
 # Applications Alias
 #export CLASSPATH=.:$UTILS_PROJECT_PATH/Applications/antlrworks-1.3.jar:$CLASSPATH
 #alias trang="java -jar $UTILS_PROJECT_PATH/Applications/trang-20090818/trang.jar"
