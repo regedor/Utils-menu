@@ -62,6 +62,7 @@ sudo gem install --no-rdoc --no-ri authlogic
 sudo gem install --no-rdoc --no-ri authlogic-oid
 sudo gem install --no-rdoc --no-ri ruby-openid
 sudo gem install --no-rdoc --no-ri post_commit
+sudo gem install --no-rdoc --no-ri paperclip
 
 
 
