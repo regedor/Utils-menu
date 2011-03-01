@@ -95,3 +95,16 @@ parse_git_branch() {
  # Usage Exampe: 
  # export PS1='\[\033[0;35m\]\h \[\033[0;33m\]\w\[\033[0;32m\] $(parse_git_branch)\[\033[00m\]: '
  # if you want to change this line you should think in changing the install file too.
+
+# Automaticaly run screen on ssh sessions
+# Start screen if SSH session or resume if screen already running.
+#
+if [ "$SSH_CONNECTION" ]; then
+    if [ -z "$STY" ]; then
+        # Screen is not currently running, but we are in SSH, so start a session
+        exec screen -d -R
+    fi  
+fi
+
+
+

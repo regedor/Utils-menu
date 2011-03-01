@@ -1,0 +1,9 @@
+termcapinfo xterm* ti@:te@
+
+caption always # activates window caption
+caption string '%{= wk}[ %{k}%H %{k}][%= %{= wk}%?%-Lw%?%{r}(%{r}%n*%f%t%?(%u)%?%{r})%{k}%?%+Lw%?%?%= %{k}][%{b} %d/%m %{k}%c %{k}]' # good looking window bar
+
+# Rename sessions with Ctrl+a+A
+bindkey -k k3 prev # F3 for previous window
+bindkey -k k4 next # F4 for next window
+
