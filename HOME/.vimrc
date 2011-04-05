@@ -25,16 +25,18 @@ set guioptions-=T
 " colors slate
 filetype plugin indent on    
 
-map <silent> <F5>    :bprev            <CR>
-map <silent> <F6>    :bnext            <CR>
-map <silent> <C-t>   :tabnew .         <CR>
-map <silent> <C-\>   :tabnext          <CR>
-" map <silent> <C-tab> :tabnext          <CR>
-nnoremap <F3> :w        <CR>
-nnoremap <F4> :quit        <CR>
+map <silent> <F5>    :bprev                               <CR>
+map <silent> <F6>    :bnext                               <CR>
+map <silent> <F7>    :setlocal spell spelllang=en_gb      <CR>
+map <silent> <F8>    :setlocal spell spelllang=pt         <CR>
+map <silent> <C-t>   :tabnew .                            <CR>
+map <silent> <C-\>   :tabnext                             <CR>
+" map <silent> <C-tab> :tabnext                             <CR>
+nnoremap <F3> :w                                          <CR>
+nnoremap <F4> :quit                                       <CR>
 nnoremap <C-O> :NERDTreeToggle \| exe "vertical resize".20<CR>
-nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2) <CR>
+nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3) <CR>
 
 
 imap <silent><F2> <Esc>v`^me<Esc>gi<C-o>:call Ender()<CR>

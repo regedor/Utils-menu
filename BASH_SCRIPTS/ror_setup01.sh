@@ -56,11 +56,14 @@ sudo gem install --no-rdoc --no-ri fastercsv
 sudo gem install --no-rdoc --no-ri spreadsheet-excel
 sudo gem install --no-rdoc --no-ri cucumber-rails
 sudo gem install --no-rdoc --no-ri database_cleaner
+sudo gem install --no-rdoc --no-ri declarative_authorization --source http://gemcutter.org
 
 sudo gem install --no-rdoc --no-ri authlogic
 sudo gem install --no-rdoc --no-ri authlogic-oid
 sudo gem install --no-rdoc --no-ri ruby-openid
 sudo gem install --no-rdoc --no-ri post_commit
+sudo gem install --no-rdoc --no-ri paperclip
+
 
 
 sudo gem list
