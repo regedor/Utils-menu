@@ -33,9 +33,39 @@ alias gb='git branch'
 alias gba='git branch -a'
 
 # Ruby on Rails
-alias db_reborn="rake db:migrate:reset && rake db:seed && rake db:test:clone && rm -r public/system ; mkdir public/system"
+function db_reborn {
+	LOWER_RAILS_ENV=$(tr [:upper:] [:lower:] <<< "$RAILS_ENV")
+	if [ "$LOWER_RAILS_ENV" == "production" ]; then
+		echo "WARNING: You are trying to db_reborn in a PRODUCTION SERVER."
+		echo "This will COMPLETELY ERASE this application's DATABASE!!!"
+		read -p "Do you really want to do it? [y/N] "
+		if [[ "$REPLY" == "y" || "$REPLY" == "Y" ]]; then
+			rake db:migrate:reset && rake db:seed && rake db:test:clone && rm -r public/system ; mkdir -p public/system
+		else
+			echo "Aborted db_reborn"
+		fi
+	fi
+}
+
+function ultimate_reborn {
+	LOWER_RAILS_ENV=$(tr [:upper:] [:lower:] <<< "$RAILS_ENV")
+	if [ "$LOWER_RAILS_ENV" == "production" ]; then
+		echo "WARNING: You are trying to ultimate_reborn in a PRODUCTION SERVER."
+		echo "This will COMPLETELY ERASE this application's DATABASE!!!"
+		read -p "Do you really want to do it? [y/N] "
+		if [[ "$REPLY" == "y" || "$REPLY" == "Y" ]]; then
+			ss_stop ; rake db:migrate:reset && rake db:seed && ruby script/server -d && rake jobs:work
+		else
+			echo "Aborted ultimate_reborn"
+		fi
+	fi
+}
+
+# Deprecated
+# alias db_reborn="rake db:migrate:reset && rake db:seed && rake db:test:clone && rm -r public/system ; mkdir public/system"
+# alias ultimate_reborn='ss_stop ; rake db:migrate:reset && rake db:seed && ruby script/server -d && rake jobs:work'
+
 alias ss_stop='kill -9 $(ps -A n | grep "[^]] ruby script/server" | egrep "^\s*[0-9]+" -o)'
-alias ultimate_reborn='ss_stop ; rake db:migrate:reset && rake db:seed && ruby script/server -d && rake jobs:work'
 alias reset_application='rm -rf public/javascripts/cache/ ; rm -rf public/stylesheets/cache/ ; touch tmp/restart.txt ;'
 alias rjw="rake jobs:work"
 alias ss="ruby script/server start"
