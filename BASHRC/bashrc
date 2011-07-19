@@ -66,7 +66,7 @@ function ultimate_reborn {
 # alias ultimate_reborn='ss_stop ; rake db:migrate:reset && rake db:seed && ruby script/server -d && rake jobs:work'
 
 alias ss_stop='kill -9 $(ps -A n | grep "[^]] ruby script/server" | egrep "^\s*[0-9]+" -o)'
-alias reset_application='rm -rf public/javascripts/cache/ ; rm -rf public/stylesheets/cache/ ; touch tmp/restart.txt ;'
+alias reset_application='rm -rf public/javascripts/cache/ ; rm -rf public/stylesheets/cache/ ; touch tmp/restart.txt ; compass ; rake themes:choose'
 alias rjw="rake jobs:work"
 alias ss="ruby script/server start"
 alias sc="ruby script/console"
