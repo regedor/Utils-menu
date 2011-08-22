@@ -1,0 +1,52 @@
+#!/bin/bash
+
+ROOTDIR="$1"
+ROOTDIR=$(echo "$ROOTDIR" | perl -pe 's!/$!!')
+
+for txt in $(ls -1r "$ROOTDIR" | grep -P '.txt$' | sort); do
+	options=(${options[@]-} "$ROOTDIR/$txt")
+done
+
+CHOICE="NO"
+while [ "$CHOICE" == "NO" ]; do
+	echo
+    # Print the list of options
+    for OPTION in "${options[@]}";
+	do 
+		title=$(grep -P '^# title:' "$OPTION" | perl -pe 's/^# title:\s*//')
+		echo "$title";
+		# echo "$OPTION"
+	done |\
+    nl |\
+    perl -plne 's/^\s+(\d+)\s+/ [$1]#/g' |\
+    column -s'#' -t
+    read -p "Choose an option: " -e NUMBER
+
+	case $NUMBER in
+ 	[0-9]|[0-9][0-9]) # Number with one or two digits. 
+		OPTION=$(for opt in ${options[@]}; do echo $opt; done | grep -P '.txt$' | sort | head -$NUMBER | tail -1)
+		OPTION=${OPTION/.txt/}
+		if [ -f "$OPTION.pl" ]; then
+			OPTION="$OPTION.pl"
+		elif [ -f "$OPTION.rb" ]; then
+			OPTION="$OPTION.rb"
+		elif [ -f "$OPTION.sh" ]; then
+			OPTION="$OPTION.sh"
+		elif [ -f "$OPTION" ]; then
+			OPTION="$OPTION"
+		fi
+		
+		if [ -f "$OPTION" ]; then
+			"$OPTION"
+		elif [ -d "$OPTION" ]; then
+			$0 "$OPTION"
+		fi
+		CHOICE='YES'
+		;;
+	*)
+        echo -e "\nUndefined option '$NUMBER'!"
+        CHOICE='NO'
+        ;;
+	esac
+done
+

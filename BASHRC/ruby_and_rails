@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# Ruby
+alias geminstall="gem install --no-ri --no-rdoc"
+
+# Ruby on Rails
+alias ss_stop='kill -9 $(ps -A n | grep "[^]] ruby script/server" | egrep "^\s*[0-9]+" -o)'
+alias reset_application='rm -rf public/javascripts/cache/ ; rm -rf public/stylesheets/cache/ ; touch tmp/restart.txt ; compass ; rake themes:choose'
+alias rjw="rake jobs:work"
+alias ss="ruby script/server start"
+alias sc="ruby script/console"
+
+function db_reborn {
+	LOWER_RAILS_ENV=$(tr [:upper:] [:lower:] <<< "$RAILS_ENV")
+	if [ "$LOWER_RAILS_ENV" == "production" ]; then
+		echo "WARNING: You are trying to db_reborn in a PRODUCTION SERVER."
+		echo "This will COMPLETELY ERASE this application's DATABASE!!!"
+		read -p "Do you really want to do it? [y/N] "
+		if [[ "$REPLY" == "y" || "$REPLY" == "Y" ]]; then
+			rake db:migrate:reset && rake db:seed && rake db:test:clone && rm -r public/system ; mkdir -p public/system
+		else
+			echo "Aborted db_reborn"
+		fi
+	fi
+}
+
+function ultimate_reborn {
+	LOWER_RAILS_ENV=$(tr [:upper:] [:lower:] <<< "$RAILS_ENV")
+	if [ "$LOWER_RAILS_ENV" == "production" ]; then
+		echo "WARNING: You are trying to ultimate_reborn in a PRODUCTION SERVER."
+		echo "This will COMPLETELY ERASE this application's DATABASE!!!"
+		read -p "Do you really want to do it? [y/N] "
+		if [[ "$REPLY" == "y" || "$REPLY" == "Y" ]]; then
+			ss_stop ; rake db:migrate:reset && rake db:seed && ruby script/server -d && rake jobs:work
+		else
+			echo "Aborted ultimate_reborn"
+		fi
+	fi
+}
+
+rails_environment_chooser() {
+  echo "The current Rails Environment is $RAILS_ENV."
+  echo "1 - Development"
+  echo "2 - Test"
+  echo "3 - Production"
+  echo "4 - Reset RAILS_ENV"
+  echo "Chose the new environment option:"
+  read -n1 KEY
+  echo ""
+  case "$KEY" in
+    "1" ) export RAILS_ENV='development';;
+    "2" ) export RAILS_ENV='test';;
+    "3" ) export RAILS_ENV='production';;
+    "4" ) unset  RAILS_ENV;;
+    *   )
+      echo "Wrong option!"
+      return 1
+    ;;
+  esac
+  echo "RAILS_ENV have been setted to $RAILS_ENV."
+}  

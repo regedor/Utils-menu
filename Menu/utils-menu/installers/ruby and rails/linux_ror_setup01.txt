@@ -1,0 +1,3 @@
+# title: Install Rails 2.3
+# so: Linux
+Coisas

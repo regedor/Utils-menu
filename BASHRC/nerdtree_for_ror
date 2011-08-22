@@ -1,0 +1,26 @@
+#!/bin/bash
+
+prepare_NERDTree_for_rails() {
+  #if self.isSymLink && !(b:NERDTreeRoot.path.pathSegments[-1] =~ 'Project_NERDTree')
+  rm -rf tmp/Project_NERDTree
+  mkdir tmp/Project_NERDTree
+  ln -s ../../app/models/           tmp/Project_NERDTree/01-Models
+  ln -s ../../app/views/            tmp/Project_NERDTree/02-Views
+  ln -s ../../app/controllers/      tmp/Project_NERDTree/03-Controllers
+  ln -s ../../app/helpers/          tmp/Project_NERDTree/04-Helpers
+  ln -s ../../features/             tmp/Project_NERDTree/05-Features
+  ln -s ../../test/                 tmp/Project_NERDTree/06-Test
+  ln -s ../../db/migrate            tmp/Project_NERDTree/08-Migrations
+  ln -s ../../public/stylesheets    tmp/Project_NERDTree/08-Stylesheets
+  ln -s ../../public/javascripts    tmp/Project_NERDTree/09-Javascripts
+  ln -s ../../config/               tmp/Project_NERDTree/10-Config
+  ln -s ../../                      tmp/Project_NERDTree/11-Root
+}
+et() {
+  prepare_NERDTree_for_rails
+  vim "+NERDTree tmp/Project_NERDTree" "+nnoremap <buffer> <silent> <space>  \|:silent exec 'vertical resize '.(match(g:proj_flags, '\Ct')!=-1 && winwidth('.') > 20? (20) : (winwidth('.') + 100))<CR>" "+exec 'vertical resize'.20" config/routes.rb
+}
+vet() {
+  prepare_NERDTree_for_rails
+  gvim "+NERDTree tmp/Project_NERDTree" "+nnoremap <buffer> <silent> <space>  \|:silent exec 'vertical resize '.(match(g:proj_flags, '\Ct')!=-1 && winwidth('.') > 20? (20) : (winwidth('.') + 100))<CR>" "+exec 'vertical resize'.20" config/routes.rb
+}
