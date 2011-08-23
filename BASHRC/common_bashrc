@@ -3,7 +3,6 @@
 # Commun bash usage
 alias dirmenu="$UTILS_PROJECT_PATH/Menu/dirmenu"
 alias utils-menu="dirmenu $UTILS_PROJECT_PATH/Menu/utils-menu"
-alias aaa="echo $UTILS_PROJECT_PATH"
 
 alias free="free -m"
 alias l="ls -an"
