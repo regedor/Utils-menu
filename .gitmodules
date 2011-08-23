@@ -1,0 +1,3 @@
+[submodule "Vendor/dirmenu"]
+	path = Vendor/dirmenu
+	url = https://github.com/andrefs/dirmenu
