@@ -1,17 +1,21 @@
 #!/bin/bash
 
 GITREPO="$1"
+if [ -z "$GITREPO" ]; then
+	GITREPO="."
+fi
 
-cd "$1"
+cd "$GITREPO"
 git fetch > /tmp/$$.updaterepo 2>/dev/null
+git submodule foreach git fetch >> /tmp/$$.updaterepo 2>/dev/null
 GITCHANGES=$(cat /tmp/$$.updaterepo)
-if [ -n "GITCHANGES" ]; then
+if [ -n "$GITCHANGES" ]; then
 	EXIT="NO"
 	while [ "$EXIT"=="NO" ]; do
 		echo "Looks like there are updates available for "$1"."
 		echo "What do you want do do? [Ignore]"
 		echo -e " [S]#See git-fetch output\n [U]#Update" | column -s'#' -t
-		read
+		read -p "Option: "
 
 		case $REPLY in
 		S|s)
@@ -20,14 +24,17 @@ if [ -n "GITCHANGES" ]; then
 			;;
 		U|u)
 			git pull
+			git submodule foreach git pull
 			EXIT="YES"
 			;;
 		*)
 			echo "Ignoring updates."
+			rm -f /tmp/$$.updaterepo
 			exit 0;
 			;;
 		esac
 	done
 fi
 
+rm -f /tmp/$$.updaterepo
 exit 0
