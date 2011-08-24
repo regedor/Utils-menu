@@ -7,7 +7,7 @@ fi
 
 cd "$GITREPO"
 git fetch > /tmp/$$.updaterepo 2>/dev/null
-git submodule foreach git fetch >> /tmp/$$.updaterepo 2>/dev/null
+git submodule foreach git fetch | grep -v -P "^Entering" >> /tmp/$$.updaterepo 2>/dev/null
 GITCHANGES=$(cat /tmp/$$.updaterepo)
 if [ -n "$GITCHANGES" ]; then
 	EXIT="NO"
@@ -19,7 +19,11 @@ if [ -n "$GITCHANGES" ]; then
 
 		case $REPLY in
 		S|s)
+			echo
+			echo "git-fetch output:"
+			echo
 			cat /tmp/$$.updaterepo
+			echo
 			EXIT="NO"
 			;;
 		U|u)
