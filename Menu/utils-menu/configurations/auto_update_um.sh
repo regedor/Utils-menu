@@ -2,13 +2,13 @@
 
 cd "$UTILS_PROJECT_PATH"
 UMHASCHANGES=$(git status | grep "# Your branch is behind ")
-cd -
+cd - &>/dev/null
 
 
 if [ -n "$UMHASCHANGES" ]; then
 	EXIT="NO"
 	while [ "$EXIT"=="NO" ]; do
-		echo "Looks like there are updates available for "$1"."
+		echo "Looks like there are updates available for utils-menu."
 		echo "What would you like to do? [Ignore]"
 		echo -e " [S]#See new commits\n [U]#Update sem medo!" | column -s'#' -t
 		read -p "Option: "
@@ -18,7 +18,7 @@ if [ -n "$UMHASCHANGES" ]; then
 			echo
 			cd "$UTILS_PROJECT_PATH"
 			git log master..origin/master --pretty=format:"%an: %s"
-			cd -
+			cd - &>/dev/null
 			echo
 			EXIT="NO"
 			;;
@@ -28,7 +28,7 @@ if [ -n "$UMHASCHANGES" ]; then
 			git submodule foreach git pull
 			EXIT="YES"
 			echo "$0 updated"
-			cd -
+			cd - &>/dev/null
 			;;
 		*)
 			echo "Ignoring updates."
