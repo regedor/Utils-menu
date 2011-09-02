@@ -29,6 +29,7 @@ if [ -n "$UMHASCHANGES" ]; then
 			EXIT="YES"
 			echo "utils-menu updated!"
 			cd - &>/dev/null
+			exit 0;
 			;;
 		*)
 			echo "Ignoring updates."
