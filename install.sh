@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# just testing updates
-
 
 # Exit if any simple command fails	
 set -e 
@@ -78,6 +76,7 @@ else
 		else
 			echo
 			echo utils-menu aborted!
+			exit 1
 		fi
 	fi
 
