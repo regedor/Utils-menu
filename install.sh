@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# just testing updates
+
+
 # Exit if any simple command fails	
 set -e 
 
