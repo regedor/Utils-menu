@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# testing fetch
-
 # Exit if any simple command fails	
 set -e 
 
