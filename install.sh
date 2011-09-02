@@ -38,7 +38,6 @@ else
 	
 	echo "*** Cloning Utils-menu Git repository to '$UTILS_PROJECT_PATH'..."
 	git clone git://github.com/regedor/Utils-menu.git "$UTILS_PROJECT_PATH" 2>/dev/null
-	chmod -R 755 "$UTILS_PROJECT_PATH"
 	cd "$UTILS_PROJECT_PATH"
 
 	git submodule init 2>/dev/null
