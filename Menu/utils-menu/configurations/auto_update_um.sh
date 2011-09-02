@@ -27,11 +27,12 @@ if [ -n "$UMHASCHANGES" ]; then
 			git pull
 			git submodule foreach git pull
 			EXIT="YES"
-			echo "$0 updated"
+			echo "utils-menu updated!"
 			cd - &>/dev/null
 			;;
 		*)
 			echo "Ignoring updates."
+			EXIT="YES"
 			exit 0;
 			;;
 		esac
