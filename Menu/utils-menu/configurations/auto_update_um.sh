@@ -38,7 +38,7 @@ if [ -n "$UMHASCHANGES" ]; then
 	done
 fi
 
-(cd "$UTILS_PROJECT_PATH" && git pull &>/dev/null &)
+(cd "$UTILS_PROJECT_PATH" && git fetch &>/dev/null &)
 
 
 
