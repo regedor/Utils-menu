@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# 
 # Exit if any simple command fails	
 set -e 
 
