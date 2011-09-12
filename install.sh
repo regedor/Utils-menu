@@ -26,10 +26,10 @@ else
 	fi
 	
 	# Configure prompt
-	# echo  "# Improve with options for prompt" >> "$BASHRC_PATH"
-	# echo  "export PS1='\[\033[0;35m\]\h \[\033[0;33m\]\w\[\033[0;32m\] \$(parse_git_branch)\[\033[00m\]: '" >> "$BASHRC_PATH"
+	# echo	"# Improve with options for prompt" >> "$BASHRC_PATH"
+	# echo	"export PS1='\[\033[0;35m\]\h \[\033[0;33m\]\w\[\033[0;32m\] \$(parse_git_branch)\[\033[00m\]: '" >> "$BASHRC_PATH"
 	
-	if [ -z "$UTILS_PROJECT_PATH"]; then
+	if [ -z "$UTILS_PROJECT_PATH" ]; then
 		UTILS_PROJECT_PATH="/opt/utils-menu"
 	fi
 
@@ -49,7 +49,7 @@ else
 	# Add $UTILS_PROJECT_PATH to bashrc
 	# cat <<- END >> $BASHRC_PATH
 
-	# ## Utils Menu Path."                         
+	# ## Utils Menu Path."						   
 	# export UTILS_PROJECT_PATH="$UTILS_PROJECT_PATH"
 	# END
 
@@ -88,5 +88,3 @@ else
 	chmod +x /usr/local/bin/utils-menu
 
 fi
-
-

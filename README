@@ -1,0 +1,14 @@
+
+INSTALL
+
+You want to install utils-menu? Run the following command and it will
+install itself for you.
+	curl -L http://goo.gl/b2pmx | sudo bash
+		# (utils-menu will be installed in /opt/utils-menu)
+
+If you want to install utils-menu in a different directory, just run:
+	curl -L http://goo.gl/b2pmx | sudo UTILS_PROJECT_PATH=/your/directory bash
+  
+
+For more details about this program, visit http://github.com/regedor/Utils-menu
+
