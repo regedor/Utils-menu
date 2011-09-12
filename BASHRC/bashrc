@@ -4,6 +4,7 @@ source "$UTILS_PROJECT_PATH"/BASHRC/common_bashrc
 source "$UTILS_PROJECT_PATH"/BASHRC/git
 source "$UTILS_PROJECT_PATH"/BASHRC/nerdtree_for_ror
 source "$UTILS_PROJECT_PATH"/BASHRC/ruby_and_rails
+source "$UTILS_PROJECT_PATH"/BASHRC/group_buddies
 
 # Commun bash usage
 alias update="sudo aptitude update"

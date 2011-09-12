@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "asd"
-
 if [[ -z "$1" ]] ; then
   echo "Enter the path for the Project:"
   read PROJECTDIR
