@@ -87,4 +87,9 @@ else
 
 	chmod +x /usr/local/bin/utils-menu
 
+	### Temporary fixes (goal: keep empty!)
+	# Symlink to merge_yaml.pl (TODO merge_yaml.pl --> YAML::Merge perl package)
+	ln -s "$UTILS_PROJECT_PATH"/Menu/utils-menu/utils/merge_yaml.pl /usr/local/bin/merge_yaml.pl
+	chmod +x /usr/local/bin/merge_yaml.pl
+
 fi
