@@ -80,7 +80,7 @@ else
 		fi
 	fi
 
-	export dirmenu="\$UTILS_PROJECT_PATH/Vendor/dirmenu/dirmenu"
+	alias dirmenu="\$UTILS_PROJECT_PATH/Vendor/dirmenu/dirmenu"
 	"\$UTILS_PROJECT_PATH"/Menu/utils-menu/configurations/auto_update_um.sh
 	dirmenu "\$UTILS_PROJECT_PATH"/Menu/utils-menu
 	END
