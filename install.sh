@@ -56,6 +56,10 @@ else
 	cd "$DMINSTALLDIR"
 	bash "$DMINSTALLDIR"/dirmenu_generate
 
+	if [ ! -e "/usr/local/bin/" ]; then
+		mkdir "/usr/local/bin"
+	fi 
+
 	# Add utils-menu to /usr/local/bin
 	cat <<- END > /usr/local/bin/utils-menu
 	#!/bin/bash
@@ -71,7 +75,7 @@ else
 		echo "Do you want to change the ownership of '$UTILS_PROJECT_PATH'?"
 		read -p "(sudo password will be needed) [y/N] "
 		if [[ "\$REPLY" == "y" || "\$REPLY" == "Y" ]]; then
-			sudo chown -R "\$UTILSUSER":"\$UTILSUSER" "$UTILS_PROJECT_PATH"
+			sudo chown -R "\$UTILSUSER" "$UTILS_PROJECT_PATH"
 		else
 			echo
 			echo utils-menu aborted!
