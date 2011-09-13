@@ -80,16 +80,20 @@ else
 		fi
 	fi
 
-	export dirmenu="$UTILS_PROJECT_PATH/Vendor/dirmenu/dirmenu"
-	"$UTILS_PROJECT_PATH"/Menu/utils-menu/configurations/auto_update_um.sh
-	dirmenu "$UTILS_PROJECT_PATH"/Menu/utils-menu
+	export dirmenu="\$UTILS_PROJECT_PATH/Vendor/dirmenu/dirmenu"
+	"\$UTILS_PROJECT_PATH"/Menu/utils-menu/configurations/auto_update_um.sh
+	dirmenu "\$UTILS_PROJECT_PATH"/Menu/utils-menu
 	END
 
+	chmod +x "$UTILS_PROJECT_PATH"/Vendor/dirmenu/dirmenu
+	chmod +x "$UTILS_PROJECT_PATH"/Menu/utils-menu/configurations/auto_update_um.sh
 	chmod +x /usr/local/bin/utils-menu
 
 	### Temporary fixes (goal: keep empty!)
 	# Symlink to merge_yaml.pl (TODO merge_yaml.pl --> YAML::Merge perl package)
-	ln -s "$UTILS_PROJECT_PATH"/Menu/utils-menu/utils/merge_yaml.pl /usr/local/bin/merge_yaml.pl
+	if [ ! -e /usr/local/bin/merge_yaml.pl ]; then
+		ln -s "$UTILS_PROJECT_PATH"/Menu/utils-menu/utils/merge_yaml.pl /usr/local/bin/merge_yaml.pl
+	fi
 	chmod +x /usr/local/bin/merge_yaml.pl
 
 fi
