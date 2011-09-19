@@ -1,13 +1,10 @@
 #!/bin/bash
 
-echo jardim
-
 read -p "Queres por isto no teu bashrc? [Y/n] "
 if [[ "$REPLY"=="n" || "$REPLY"=="N" ]]; then
 	exit 1
 fi
 
-echo flores
 
 # Choose bashrc depending on OS
 if [ `uname` == "Darwin" ] ; then
