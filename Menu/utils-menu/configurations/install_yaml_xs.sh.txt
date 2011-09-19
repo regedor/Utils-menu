@@ -1,0 +1,5 @@
+# title: Install Perl modules needed by merge_yaml.pl
+# os: all
+Installs all the Perl modules needed by merge_yaml.pl:
+- YAML::XS
+- Data::Dumper
