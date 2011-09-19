@@ -2,6 +2,7 @@
 
 read -p "Queres por isto no teu bashrc? [Y/n] "
 if [[ "$REPLY" == "n" || "$REPLY" == "N" ]]; then
+	echo "Tabem, má bontade..."
 	exit 1
 fi
 
@@ -15,5 +16,5 @@ else
 fi  
 
 echo "source \"$UTILS_PROJECT_PATH\"/BASHRC/\"$BASHRC_FILE\"" >> "$BASHRC_PATH"
-
+echo "Tabem, ja tá!"
 exit 0
