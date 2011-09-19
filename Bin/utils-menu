@@ -1,0 +1,4 @@
+#!/bin/bash
+
+"$UTILS_PROJECT_PATH"/Menu/utils-menu/configurations/auto_update_um.sh
+dirmenu "$UTILS_PROJECT_PATH"/Menu/utils-menu
