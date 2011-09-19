@@ -1,9 +1,6 @@
 #!/bin/bash
 
 # Commun bash usage
-alias dirmenu="$UTILS_PROJECT_PATH/Vendor/dirmenu/dirmenu"
-alias utils-menu="dirmenu $UTILS_PROJECT_PATH/Menu/utils-menu"
-
 alias free="free -m"
 alias l="ls -an"
 alias up="cd .."
