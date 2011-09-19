@@ -1,0 +1,3 @@
+# title: Add stuff to bashrc
+# os: all
+bidas
