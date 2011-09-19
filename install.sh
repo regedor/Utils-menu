@@ -43,3 +43,5 @@ else
 	"$UTILS_PROJECT_PATH"/Menu/utils-menu/configurations/add_to_bashrc.sh
 	echo 'PATH="$PATH:$UTILS_PROJECT_PATH/Bin"' >> "$BASHRC_PATH"
 fi
+
+exit 0

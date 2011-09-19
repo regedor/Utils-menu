@@ -1,10 +1,9 @@
 #!/bin/bash
 
 read -p "Queres por isto no teu bashrc? [Y/n] "
-if [[ "$REPLY"=="n" || "$REPLY"=="N" ]]; then
+if [[ "$REPLY" == "n" || "$REPLY" == "N" ]]; then
 	exit 1
 fi
-
 
 # Choose bashrc depending on OS
 if [ `uname` == "Darwin" ] ; then
