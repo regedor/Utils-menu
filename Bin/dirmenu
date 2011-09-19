@@ -1,14 +1,2 @@
 #!/bin/bash
-
-set -e # Exit if any simple command fails
-
-cat <<- END > "$DMINSTALLDIR"/dirmenu
-#!/bin/bash
-export DMINSTALLDIR="$DMINSTALLDIR"
-
-END
-cat "$DMINSTALLDIR"/dirmenu.skel >> "$DMINSTALLDIR"/dirmenu
-chmod +x "$DMINSTALLDIR"/dirmenu
-
-exit 0
-
+"$UTILS_PROJECT_PATH"/Vendor/dirmenu/dirmenu "$@"
