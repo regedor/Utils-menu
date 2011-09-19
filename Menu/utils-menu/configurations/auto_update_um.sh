@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 cd "$UTILS_PROJECT_PATH"
 UMHASCHANGES=$(git status | grep "# Your branch is behind ")
 cd - &>/dev/null
