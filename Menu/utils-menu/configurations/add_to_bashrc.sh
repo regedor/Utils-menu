@@ -14,6 +14,6 @@ else
   BASHRC_FILE="bashrc"  
 fi  
 
-echo 'source "$UTILS_PROJECT_PATH"/BASHRC/"$BASHRC_FILE"' >> "$BASHRC_PATH"
+echo "source \"$UTILS_PROJECT_PATH\"/BASHRC/\"$BASHRC_FILE\"" >> "$BASHRC_PATH"
 
 exit 0
