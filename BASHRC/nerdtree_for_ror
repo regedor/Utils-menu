@@ -16,11 +16,13 @@ prepare_NERDTree_for_rails() {
   ln -s ../../config/               tmp/Project_NERDTree/10-Config
   ln -s ../../                      tmp/Project_NERDTree/11-Root
 }
-et() {
+
+function et {
   prepare_NERDTree_for_rails
   vim "+NERDTree tmp/Project_NERDTree" "+nnoremap <buffer> <silent> <space>  \|:silent exec 'vertical resize '.(match(g:proj_flags, '\Ct')!=-1 && winwidth('.') > 20? (20) : (winwidth('.') + 100))<CR>" "+exec 'vertical resize'.20" config/routes.rb
 }
-vet() {
+
+function vet {
   prepare_NERDTree_for_rails
   gvim "+NERDTree tmp/Project_NERDTree" "+nnoremap <buffer> <silent> <space>  \|:silent exec 'vertical resize '.(match(g:proj_flags, '\Ct')!=-1 && winwidth('.') > 20? (20) : (winwidth('.') + 100))<CR>" "+exec 'vertical resize'.20" config/routes.rb
 }
