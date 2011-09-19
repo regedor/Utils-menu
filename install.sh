@@ -25,6 +25,8 @@ else
 		UTILS_PROJECT_PATH="$HOME/.utils-menu"
 	fi
 
+	export UTILS_PROJECT_PATH="$UTILS_PROJECT_PATH"
+
 	echo "*** Creating directory '$UTILS_PROJECT_PATH'..."
 	mkdir -p "$UTILS_PROJECT_PATH"
 	
