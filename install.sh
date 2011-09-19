@@ -40,6 +40,6 @@ else
 	echo >> "$BASHRC_PATH"
 	echo "# Utils-menu related" >> "$BASHRC_PATH"
 	echo "export UTILS_PROJECT_PATH='$UTILS_PROJECT_PATH'" >> "$BASHRC_PATH"
-	bash "$UTILS_PROJECT_PATH"/Menu/utils-menu/configurations/add_to_bashrc.sh
+	"$UTILS_PROJECT_PATH"/Menu/utils-menu/configurations/add_to_bashrc.sh
 	echo 'PATH="$PATH:$UTILS_PROJECT_PATH/Bin"' >> "$BASHRC_PATH"
 fi
