@@ -1,1 +1,11 @@
 alias gb-apply_theme='"$UTILS_PROJECT_PATH"/Menu/utils-menu/group_buddies/change_local_theme.sh "$(pwd)"'
+
+function ss() { 
+  CURRENT_DIR=$(basename '$(pwd)')
+  if [ "$CURRENT_DIR" == "site_files" ]; then
+     gb-apply_theme 
+     ruby script/server start
+  else
+    echo "Fodsssssss! You are not in a folder named site_files, again"
+  fi
+}
