@@ -1,1 +1,1 @@
-alias gb-apply_theme='"$UTILS_PROJECT_PATH"/Menu/utils-menu/group_buddies/change_local_theme.sh $(pwd)'
+alias gb-apply_theme='"$UTILS_PROJECT_PATH"/Menu/utils-menu/group_buddies/change_local_theme.sh "$(pwd)"'
