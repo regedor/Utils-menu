@@ -1,4 +1,4 @@
-#!/usr/bin/perl -ws
+#!/usr/bin/env perl
 
 use strict; use warnings;
 use YAML::XS;
