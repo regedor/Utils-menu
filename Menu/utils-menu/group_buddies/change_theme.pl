@@ -58,14 +58,12 @@ sub generate_saas {
 	my $sass_folder = $info->{sass_folder};
 	my $stylesheets = $info->{stylesheets};
 	print qx{mkdir -p "$stylesheets"};
-	foreach my $sass (<$sass_folder/*.sass>){
+	foreach my $sass (<"$sass_folder"/*.sass>){
 		next if $sass =~ /config\.sass$/;
 		my $css = basename($sass);
 		$css =~ s/sass$/css/;
 		$css = "$stylesheets/$css";
 		my $cmd = qq{sass --update '$sass':'$css' --style compressed};
-		# print "$sass_folder\n";
-		# print "COMMAND: $cmd\n\n\n\n";
 		print qx{sass --update '$sass':'$css' --style compressed};
 	}
 }
