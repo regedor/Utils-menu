@@ -4,8 +4,9 @@ function ss() {
   CURRENT_DIR=$(basename '$(pwd)')
   if [ "$CURRENT_DIR" == "site_files" ]; then
      gb-apply_theme 
+     echo "Running ruby script/server"
      ruby script/server start
   else
-    echo "Fodsssssss! You are not in a folder named site_files, again"
+    echo "Fodsssssss! You are not in a folder named site_files. Again!"
   fi
 }

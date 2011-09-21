@@ -5,16 +5,12 @@ source "$UTILS_PROJECT_PATH"/BASHRC/nerdtree_for_ror
 source "$UTILS_PROJECT_PATH"/BASHRC/ruby_and_rails
 source "$UTILS_PROJECT_PATH"/BASHRC/group_buddies
 
-# Criar if que carrega ubuntu ou mac
-
 # Choose bashrc depending on OS
 if [ `uname` == "Darwin" ] ; then
   BASHRC_PATH="$HOME/.bash_profile" 
-  BASHRC_FILE="bashrc_mac"
+  BASHRC_FILE="mac"
 else    
   BASHRC_PATH="$HOME/.bashrc"
-  BASHRC_FILE="bashrc"  
+  BASHRC_FILE="ubuntu"  
 fi  
-
-echo "source \"$UTILS_PROJECT_PATH\"/BASHRC/\"$BASHRC_FILE\"" >> "$BASHRC_PATH"
-echo "Done!"
+source "$UTILS_PROJECT_PATH"/BASHRC/"$BASHRC_FILE"
