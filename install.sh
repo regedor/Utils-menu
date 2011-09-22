@@ -11,10 +11,8 @@ else
 	 # Choose bashrc depending on OS
 	if [ `uname` == "Darwin" ] ; then
 	  BASHRC_PATH="$HOME/.bash_profile"	
-	  BASHRC_FILE="bashrc_mac"
 	else	
 	  BASHRC_PATH="$HOME/.bashrc"
-	  BASHRC_FILE="bashrc"	
 	fi
 	
 	# Configure prompt
@@ -39,11 +37,13 @@ else
 	git submodule foreach git checkout master 2>/dev/null
 	git submodule foreach git pull 2>/dev/null
 
+	echo "*** Adding a few line to $BASHRC_PATH"
+
 	echo >> "$BASHRC_PATH"
 	echo "# Utils-menu related" >> "$BASHRC_PATH"
 	echo "export UTILS_PROJECT_PATH='$UTILS_PROJECT_PATH'" >> "$BASHRC_PATH"
-	"$UTILS_PROJECT_PATH"/Menu/utils-menu/configurations/add_to_bashrc.sh
 	echo 'export PATH="$PATH":"$UTILS_PROJECT_PATH"/Bin' >> "$BASHRC_PATH"
+	"$UTILS_PROJECT_PATH"/Menu/utils-menu/configurations/add_to_bashrc.sh
 fi
 
 exit 0

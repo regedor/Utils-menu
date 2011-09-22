@@ -1,5 +1,7 @@
 #!/bin/bash
 
+alias utils-menu-folder="cd $UTILS_PROJECT_PATH"
+
 # Commun bash usage
 alias free="free -m"
 alias l="ls -an"
@@ -11,3 +13,15 @@ alias up4="cd ../../../.."
 alias up5="cd ../../../../.."
 alias up6="cd ../../../../../.."
 export PATH=.:$PATH
+
+# Edit your bash file
+function edit-bashrc() {
+  if [ `uname` == "Darwin" ] ; then
+    vim "$HOME/.bash_profile" 
+  else    
+    vim "$HOME/.bashrc"
+  fi  
+}
+
+# Reload Bash
+alias reload_bash="source ~/.bash_profile"

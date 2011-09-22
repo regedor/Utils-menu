@@ -13,3 +13,5 @@ else
   BASHRC_FILE="ubuntu"  
 fi  
 source "$UTILS_PROJECT_PATH"/BASHRC/"$BASHRC_FILE"
+
+source "$UTILS_PROJECT_PATH"/BASHRC/group_buddies

@@ -2,7 +2,7 @@
 
 echo "This script is going to do the following things:"
 echo " * Add to you bashrc:"
-echo "   |  source \"\$UTILS_PROJECT_PATH\"/BASHRC/all"
+echo "   |  source \"\$UTILS_PROJECT_PATH\"/BASHRC/profiles/all"
 
 read -p "Do you wanna run it? [Y/n]"
 if [[ "$REPLY" == "n" || "$REPLY" == "N" ]]; then
@@ -19,6 +19,6 @@ else
   BASHRC_FILE="bashrc"  
 fi  
 
-echo "source \"$UTILS_PROJECT_PATH\"/BASHRC/all" >> "$BASHRC_PATH"
+echo "source \"\$UTILS_PROJECT_PATH\"/BASHRC/profiles/all" >> "$BASHRC_PATH"
 echo "Done!"
 exit 0
