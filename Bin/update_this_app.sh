@@ -7,7 +7,7 @@ else
   LOCALCONFIG="$1"
 fi
 
-PROJECTDIR="/home/hokage/public_html/$(basename $LOCALCONFIG)"
+PROJECTDIR="/home/hokage/public_html/$(basename '$LOCALCONFIG' | perl -p -e 's/(.*)\.yml/$1/')"
 THEMESPROJECTPATH="~/home/hokage/gb-handyant-themes"
 
 rm -rf public/javascripts/cache/ 
