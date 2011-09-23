@@ -1,0 +1,4 @@
+# title: Server Menu
+# so: all
+Set of scripts to configure a fresh installed Ubuntu server (setting up user accounts, 
+installing and configuring Apache, MySQL, PHP, Ruby, Rails, Passenger, and a bunch of other useful stuff as well).
