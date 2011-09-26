@@ -33,13 +33,13 @@ if [ -n "$UMHASCHANGES" ]; then
 		*)
 			echo "Ignoring updates."
 			EXIT="YES"
-			exit 0;
 			;;
 		esac
 	done
 fi
 
 (cd "$UTILS_PROJECT_PATH" && git fetch &>/dev/null &)
+exit 1;
 
 
 
