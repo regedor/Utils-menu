@@ -108,8 +108,16 @@ sub add_railsenv {
 	else 							{ $rails_env = 'development';		}
 	my $newconf = { "$rails_env: &local" => $config };
 	$newconf->{test} = { '<<' => '*local' };
-	my $yaml = YAML::XS::DumpFile($config_file,$newconf);
+
+
+	#my $yaml = YAML::XS::DumpFile($config_file,$newconf);
+
+	# Temporary fix. Replace with YAML module capable of handling anchors/references
+	my $yaml = YAML::XS::Dump($newconf);
 	$yaml =~ s/'production: &local'/production: &local/;
+	open my $conffile, '>', $config_file or die "Could not open file '$config_file' for writing.";
+	print $conffile $yaml;
+	close $conffile;
 	return $yaml;
 }
 	
