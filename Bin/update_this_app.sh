@@ -15,7 +15,7 @@ rm -rf "$PROJECTDIR"/site_files/public/javascripts/cache/
 rm -rf "$PROJECTDIR"/site_files/public/stylesheets/cache/ 
 
 git pull
-cd "$UTILS_PROJECT_PATH"
+cd "$PROJECTDIR"
 git pull
 rake db:migrete
 cd -
