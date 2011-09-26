@@ -33,7 +33,7 @@ sub prepare_data {
 		my $rept_generic_config 	= "$themes_root/Generic/".$generic_theme."/config.yml";
 		$info->{rept_generic_config} 	= $rept_generic_config;
 		$info->{generic_theme} 		= $generic_theme;
-		$info->{generic_or}  			= "$themes_root/Generic/$generic_theme/Overrides";
+		$info->{generic_or}  		= "$themes_root/Generic/$generic_theme/Overrides";
 	
 
 
@@ -46,11 +46,11 @@ sub prepare_data {
 		$info->{local_conf_folder}	= "$site_files/config";
 
 	# Overrides
-		$info->{shared_or}   			= "$themes_root/Shared/Overrides";
+		$info->{shared_or}   		= "$themes_root/Shared/Overrides";
 
 	# SASS
-		$info->{stylesheets} 			= "$site_files/public/stylesheets";
-		$info->{sass_folder} 			= "$themes_root/Instances/$client_theme";
+		$info->{stylesheets} 		= "$site_files/public/stylesheets";
+		$info->{sass_folder} 		= "$themes_root/Instances/$client_theme";
 
 	return $info;
 }
@@ -104,12 +104,13 @@ sub add_railsenv {
 	my $config_file = shift;
 	my $config = YAML::XS::LoadFile($config_file);
 	my $rails_env;
-	if(defined($ENV{'RAILS_ENV'})){ $rails_env = $ENV{'RAILS_ENV'} 	}
-	else {							$rails_env = 'development';		}
-
+	if(defined($ENV{'RAILS_ENV'}))	{ $rails_env = $ENV{'RAILS_ENV'} 	}
+	else 							{ $rails_env = 'development';		}
 	my $newconf = { "$rails_env: &local" => $config };
 	$newconf->{test} = { '<<' => '*local' };
-	YAML::XS::DumpFile($config_file,$newconf);
+	my $yaml = YAML::XS::DumpFile($config_file,$newconf);
+	$yaml =~ s/'production: &local'/production: &local/;
+	return $yaml;
 }
 	
 
