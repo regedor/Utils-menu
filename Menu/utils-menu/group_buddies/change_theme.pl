@@ -114,7 +114,7 @@ sub add_railsenv {
 
 	# Temporary fix. Replace with YAML module capable of handling anchors/references
 	my $yaml = YAML::XS::Dump($newconf);
-	$yaml =~ s/'production: &local'/production: &local/;
+	$yaml =~ s/'production: &local':/production: &local/;
 	open my $conffile, '>', $config_file or die "Could not open file '$config_file' for writing.";
 	print $conffile $yaml;
 	close $conffile;
