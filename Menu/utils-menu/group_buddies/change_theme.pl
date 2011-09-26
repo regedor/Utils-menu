@@ -6,8 +6,9 @@ use Data::Dumper;
 
 my ($repi_client_config, $themes_root, $site_files) = @ARGV;
 
-$themes_root =~ s!/$!!;
-$site_files =~ s!/$!!;
+$themes_root =~ s!/$!!;	# Remove last '/', if any
+$site_files =~ s!/$!!; 	# Remove last '/', if any
+
 my $client_theme 		= get_theme_from_config($repi_client_config) or die "Could not find 'theme' inside '$repi_client_config'\n";
 my $rept_client_config 	= "$themes_root/Instances/".$client_theme."/config.yml";
 my $generic_theme 		= get_theme_from_config($rept_client_config) or die "Could not find 'theme' inside '$rept_client_config\n'";
