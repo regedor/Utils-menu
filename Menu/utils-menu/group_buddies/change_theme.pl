@@ -104,8 +104,11 @@ sub add_railsenv {
 	my $config_file = shift;
 	my $config = YAML::XS::LoadFile($config_file);
 	my $rails_env;
-	defined($ENV{'RAILS_ENV'})? $rails_env = $ENV{'RAILS_ENV'} : $rails_env = 'development';
-	my $newconf = { $rails_env => $config };
+	if(defined($ENV{'RAILS_ENV'})){ $rails_env = $ENV{'RAILS_ENV'} 	}
+	else {							$rails_env = 'development';		}
+
+	my $newconf = { "$rails_env: &local" => $config };
+	$newconf->{test} = { '<<' => '*local' };
 	YAML::XS::DumpFile($config_file,$newconf);
 }
 	
