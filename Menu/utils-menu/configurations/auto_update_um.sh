@@ -39,7 +39,7 @@ if [ -n "$UMHASCHANGES" ]; then
 fi
 
 (cd "$UTILS_PROJECT_PATH" && git fetch &>/dev/null &)
-exit 1;
+exit 0;
 
 
 

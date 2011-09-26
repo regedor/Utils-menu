@@ -1,5 +1,5 @@
 #!/bin/bash
 curl -L http://cpanmin.us | perl - --sudo App::cpanminus
 cpanm --sudo YAML::XS
-cpanm --sudo Data::Dumper
+cpanm --sudo Hash::Merge
 exit 0
