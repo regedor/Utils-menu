@@ -9,9 +9,11 @@ my ($repi_client_config, $themes_root, $site_files) = @ARGV;
 $themes_root =~ s!/$!!;	# Remove last '/', if any
 $site_files =~ s!/$!!; 	# Remove last '/', if any
 
-my $client_theme 		= get_theme_from_config($repi_client_config) or die "Could not find 'theme' inside '$repi_client_config'\n";
+my $client_theme 		= get_theme_from_config($repi_client_config)
+                            or die "Could not find 'theme' inside '$repi_client_config'\n";
 my $rept_client_config 	= "$themes_root/Instances/".$client_theme."/config.yml";
-my $generic_theme 		= get_theme_from_config($rept_client_config) or die "Could not find 'theme' inside '$rept_client_config\n'";
+my $generic_theme 		= get_theme_from_config($rept_client_config)
+                            or die "Could not find 'theme' inside '$rept_client_config\n'";
 my $rept_generic_config = "$themes_root/Generic/".$generic_theme."/config.yml";
 
 my $info = {
@@ -78,7 +80,7 @@ sub generate_config {
 	my $local_conf = $info->{local_conf};
 	my $local_conf_folder = $info->{local_conf_folder};
 	print qx{mkdir -p "$local_conf_folder"};
-	print qx{merge_yaml.pl '$repi_client_config' '$rept_client_config' '$rept_generic_config' > '$local_conf'};
+	print qx{merge_yaml.pl '$rept_generic_config' '$rept_client_config' '$repi_client_config' > '$local_conf'};
 	add_railsenv($local_conf);
 }
 
