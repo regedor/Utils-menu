@@ -60,7 +60,8 @@ sub generate_saas {
 	print qx{mkdir -p "$stylesheets"};
 	#foreach my $sass (<"$sass_folder"/*.sass>){
 	opendir(my $sass_dir,$sass_folder);
-	foreach my $sass (readdir($sass_dir)){
+	foreach my $sass_n (readdir($sass_dir)){
+		my $sass = "$sass_folder/$sass_n";
 		next unless $sass =~ /\.sass$/; 	# Skip unless its a sass file
 		next if $sass =~ /config\.sass$/; 	# Skip if it's config.sass
 		my $css = basename($sass);
