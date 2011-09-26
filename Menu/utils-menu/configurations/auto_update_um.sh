@@ -6,7 +6,7 @@ cd - &>/dev/null
 
 if [ -n "$UMHASCHANGES" ]; then
 	EXIT="NO"
-	while [ "$EXIT"=="NO" ]; do
+	while [ "$EXIT" = "NO" ]; do
 		echo "Looks like there are updates available for utils-menu."
 		echo "What would you like to do? [Ignore]"
 		echo -e " [S]#See new commits\n [U]#Update sem medo!" | column -s'#' -t
