@@ -17,7 +17,7 @@ rm -rf "$PROJECTDIR"/site_files/public/stylesheets/cache/
 git pull
 cd "$PROJECTDIR"
 git pull
-rake db:migrete
+rake db:migrate
 cd -
 
 
