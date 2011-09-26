@@ -14,6 +14,14 @@ THEMESPROJECTPATH="$HOME/gb-handyant-themes"
 rm -rf "$PROJECTDIR"/site_files/public/javascripts/cache/ 
 rm -rf "$PROJECTDIR"/site_files/public/stylesheets/cache/ 
 
+git pull
+cd "$UTILS_PROJECT_PATH"
+git pull
+rake db:migrete
+cd -
+
+
+
 echo "$UTILS_PROJECT_PATH/Menu/utils-menu/group_buddies/change_theme.pl $LOCALCONFIG $THEMESPROJECTPATH $PROJECTDIR"
 echo 
 "$UTILS_PROJECT_PATH"/Menu/utils-menu/group_buddies/change_theme.pl "$LOCALCONFIG" "$THEMESPROJECTPATH" "$PROJECTDIR"
