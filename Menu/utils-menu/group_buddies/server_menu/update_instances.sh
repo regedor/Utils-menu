@@ -62,9 +62,6 @@ update_instance() {
   NAME=$(basename "$LOCALCONFIG" | perl -p -e 's/(.*)\.yml/$1/')
   PROJECTDIR="$HOME/public_html/$NAME/site_files"
 
-  echo "$THEMESPROJECTPATH"
-  exit 1
-  
   echo "** Removing cache files"
   echo 
   rm -rf "$PROJECTDIR"/site_files/public/javascripts/cache/ 
