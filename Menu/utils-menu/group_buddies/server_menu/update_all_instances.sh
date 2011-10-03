@@ -35,12 +35,12 @@ update_instances() {
       ;;
   
     [0-9]|[0-9][0-9]) # Number with one or two digits. 
-      SITE=$(LS -1 $GB_INSTANCES_PATH | head -$NUMBER | tail -1)
+      SITE=$(ls -1 $GB_INSTANCES_PATH | head -$NUMBER | tail -1)
       update_instance "$SITE" "$THEMESPROJECTPATH"
       CHOICE='YES'
       ;;
   
-    A|a) # PUT ALL SITes under maintenance
+    A|a) # Put all sites under maintenance
       for SITE in $(ls -1 $GB_INSTANCES_PATH); do
         update_instance "$SITE" "$THEMESPROJECTPATH"
       done
