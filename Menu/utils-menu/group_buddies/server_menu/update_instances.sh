@@ -59,7 +59,7 @@ update_instances() {
 update_instance() {
   CONFIGFILE=$1
   THEMESPROJECTPATH=$2
-  NAME=$(basename "$LOCALCONFIG" | perl -p -e 's/(.*)\.yml/$1/')
+  NAME=$(basename "$CONFIGFILE" | perl -p -e 's/(.*)\.yml/$1/')
   PROJECTDIR="$HOME/public_html/$NAME/site_files"
 
   echo "** Removing cache files"
@@ -75,9 +75,9 @@ update_instance() {
   cd -
   
   echo "** Running:"
-  echo "  $UTILS_PROJECT_PATH/Menu/utils-menu/group_buddies/change_theme.pl $LOCALCONFIG $THEMESPROJECTPATH $PROJECTDIR"
+  echo "  $UTILS_PROJECT_PATH/Menu/utils-menu/group_buddies/change_theme.pl $CONFIGFILE $THEMESPROJECTPATH $PROJECTDIR"
   echo 
-  "$UTILS_PROJECT_PATH"/Menu/utils-menu/group_buddies/change_theme.pl "$LOCALCONFIG" "$THEMESPROJECTPATH" "$PROJECTDIR"
+  "$UTILS_PROJECT_PATH"/Menu/utils-menu/group_buddies/change_theme.pl "$CONFIGFILE" "$THEMESPROJECTPATH" "$PROJECTDIR"
   
   echo "  ** Restarting the application $PROJECTDIR"
   echo 
