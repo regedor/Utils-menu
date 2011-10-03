@@ -6,7 +6,7 @@ update_instances() {
   THEMESPROJECTPATH="$HOME"/gb-handyant-themes
   
   cd "$GB_INSTANCES_FOLDER" ; echo "Estou na:$(pwd)" ; git pull ; cd -
-  cd "$THEMESPROJECTPATH" ; echo "Estou na:$(pwd)"git pull ; cd -
+  cd "$THEMESPROJECTPATH" ; echo "Estou na:$(pwd)" ; git pull ; cd -
   
   echo
   echo "Here's the list gb's instances:"
