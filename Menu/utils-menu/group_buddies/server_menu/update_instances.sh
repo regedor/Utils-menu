@@ -72,6 +72,8 @@ update_instance() {
   cd "$PROJECTDIR"
   git pull
   rake db:migrate
+  git checkout app/models/announcement.rb
+  bundle install
   cd -
   
   echo "** Running:"
