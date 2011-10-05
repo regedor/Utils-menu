@@ -1,0 +1,4 @@
+# title: Open all handy ant instances
+# so: all
+Opens online all handy ant instances in your web browser.
+If something is missing add it to script.
