@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo_message() {
+  echo
+  echo -e "\033[1m$1\033[0m"
+  echo
+}
+
 update_instances() {
   GB_INSTANCES_FOLDER="$HOME"/gb-instances
   GB_INSTANCES_PATH="$GB_INSTANCES_FOLDER"/*.yml
@@ -8,9 +14,7 @@ update_instances() {
   cd "$GB_INSTANCES_FOLDER" ; echo "Estou na:$(pwd)" ; git pull ; cd -
   cd "$THEMESPROJECTPATH" ; echo "Estou na:$(pwd)" ; git pull ; cd -
   
-  echo
-  echo "Here's the list gb's instances:"
-  echo
+  echo_message "Here's the list gb's instances:"
   
   # Calculate the list of sites in public_html and their state 
   for site in  $(ls -1 $GB_INSTANCES_PATH); do
@@ -62,30 +66,24 @@ update_instance() {
   NAME=$(basename "$CONFIGFILE" | perl -p -e 's/(.*)\.yml/$1/')
   PROJECTDIR="$HOME/public_html/$NAME/site_files"
 
-  echo "** Removing cache files"
-  echo 
-  rm -rf "$PROJECTDIR"/site_files/public/javascripts/cache/ 
-  rm -rf "$PROJECTDIR"/site_files/public/stylesheets/cache/ 
+  echo_message "** Removing cache files"
+  rm -rf "$PROJECTDIR"/public/javascripts/cache/ 
+  rm -rf "$PROJECTDIR"/public/stylesheets/cache/ 
   
-  echo "** Updating instance repository"
-  echo 
+  echo_message "** Updating instance repository"
   cd "$PROJECTDIR"
   git pull
   rake db:migrate
-  git checkout app/models/announcement.rb
   bundle install
   cd -
   
-  echo "** Running:"
-  echo "  $UTILS_PROJECT_PATH/Menu/utils-menu/group_buddies/change_theme.pl $CONFIGFILE $THEMESPROJECTPATH $PROJECTDIR"
-  echo 
+  echo_message "** Running:"
+  echo_message "  $UTILS_PROJECT_PATH/Menu/utils-menu/group_buddies/change_theme.pl $CONFIGFILE $THEMESPROJECTPATH $PROJECTDIR"
   "$UTILS_PROJECT_PATH"/Menu/utils-menu/group_buddies/change_theme.pl "$CONFIGFILE" "$THEMESPROJECTPATH" "$PROJECTDIR"
   
-  echo "  ** Restarting the application $PROJECTDIR"
-  echo 
+  echo_message "** Restarting the application $PROJECTDIR"
   touch "$PROJECTDIR"/tmp/restart.txt 
-  echo "** The instance $1 has been restarted!"
-  echo 
+  echo_message "** The instance $1 has been restarted!"
 }
 
 update_instances
