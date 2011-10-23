@@ -1,5 +1,6 @@
 echo "** Here we go!"
-open http://www.adege.eeg.uminho.pt
+open http://www.sitetree.groupbuddies.com
+sleep 6 ; open http://www.adege.eeg.uminho.pt
 sleep 6 ; open http://www.ajtg.pt
 sleep 6 ; open http://www.atrevete.eu
 sleep 6 ; open http://www.cesium.di.uminho.pt
