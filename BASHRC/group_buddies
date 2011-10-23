@@ -11,3 +11,19 @@ function ss() {
     echo "Fodsssssss! You are not in a folder named site_files."
   fi
 }
+
+function update-this-and-themes() {
+  CURRENT_DIR=$(basename "$(pwd)")
+  if [ "$CURRENT_DIR" == "site_files" ]; then
+     PROJECT_DIR="$(pwd)"
+
+     LOCALCONFIG="$PROJECT_DIR"/config/config.local
+     THEMESPROJECTPATH=$(grep themes_project_path "$PROJECT_DIR"/config/config.local | perl -p -e 's/.*"(.*)"/$1/')
+     echo ; echo "** Pulling themes" ; echo
+     cd "$THEMESPROJECTPATH" ; git pull ; cd -
+     echo ; echo "** Pulling current directory" ; echo
+     git pull
+  else
+    echo "Fodsssssss! You are not in a folder named site_files."
+  fi
+}
