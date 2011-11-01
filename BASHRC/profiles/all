@@ -2,7 +2,6 @@
 source "$UTILS_PROJECT_PATH"/BASHRC/common
 source "$UTILS_PROJECT_PATH"/BASHRC/git
 source "$UTILS_PROJECT_PATH"/BASHRC/ror
-source "$UTILS_PROJECT_PATH"/BASHRC/ror_nerdtree
 
 # Choose bashrc depending on OS
 if [ `uname` == "Darwin" ] ; then

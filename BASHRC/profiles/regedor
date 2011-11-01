@@ -1,0 +1,17 @@
+#!/bin/bash
+source "$UTILS_PROJECT_PATH"/BASHRC/profiles/all
+source "$UTILS_PROJECT_PATH"/BASHRC/ror_nerdtree
+
+alias killit="$UTILS_PROJECT_PATH"/Menu/utils-menu/utils/killit.sh
+
+function rr() {
+  killit jobs:work -y
+  if [ $1 == "reset" ] ; then
+    rake db:drop 
+    rake db:migrate
+  else
+    sleep 5
+  fi
+  rake jobs:work &
+  rails s 
+}
