@@ -1,6 +1,7 @@
 alias gb-apply_theme='"$UTILS_PROJECT_PATH"/Menu/utils-menu/group_buddies/change_local_theme.sh "$(pwd)"'
 
 unalias ss
+
 function ss() { 
   CURRENT_DIR=$(basename "$(pwd)")
   if [ "$CURRENT_DIR" == "site_files" ]; then
@@ -27,3 +28,5 @@ function update-this-and-themes() {
     echo "Fodsssssss! You are not in a folder named site_files."
   fi
 }
+
+alias sss="update-this-themes;ss"
