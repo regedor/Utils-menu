@@ -12,7 +12,7 @@ sleep 9 ; open http://www.nebaum.bio.uminho.pt
 sleep 9 ; open http://www.nebioquc.com
 sleep 9 ; open http://www.necc.pt
 sleep 9 ; open http://www.nemum.com
-sleep 9 ; open http://www.nedac.com
+sleep 9 ; open http://www.nedaac.com
 sleep 9 ; open http://www.parisportugues.com
 sleep 9 ; open http://psd.groupbuddies.com
 echo "** Done."
