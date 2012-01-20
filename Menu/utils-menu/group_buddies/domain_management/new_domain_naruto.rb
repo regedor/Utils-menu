@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-require "#{ENV['UTILS_PROJECT_PATH']}/Linode.rb"
+require "#{ENV['UTILS_PROJECT_PATH']}/Lib/Linode.rb"
 
 domain = ARGV.shift
 l = Linode::GB.new
