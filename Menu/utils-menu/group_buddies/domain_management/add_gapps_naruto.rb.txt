@@ -1,0 +1,4 @@
+# title: Add a new domain to Naruto
+# so: all
+Adds a new domain to Naruto, with default records (domain.tld
+and www.domain.tld)

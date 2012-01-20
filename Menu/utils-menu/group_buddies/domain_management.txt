@@ -1,0 +1,4 @@
+# title: Domain management
+# so: all
+Set of scripts to configure domains (adding and removing records,
+Google Apps, etc).

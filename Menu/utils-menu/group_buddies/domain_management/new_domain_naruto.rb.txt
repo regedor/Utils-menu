@@ -1,0 +1,4 @@
+# title: Add Google Apps records to a domain
+# so: all
+Adds Google Apps records to an existing domain (not
+including the verification token record)
