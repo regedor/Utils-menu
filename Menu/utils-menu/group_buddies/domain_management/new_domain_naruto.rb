@@ -1,6 +1,8 @@
 #!/usr/bin/ruby
 
-require "#{ENV['UTILS_PROJECT_PATH']}/Lib/Linode.rb"
+fullpath = File.expand_path $0
+dirname = File.dirname(fullpath)
+require "#{dirname}/Linode.rb"
 
 domain = ARGV.shift 
 if ! domain
