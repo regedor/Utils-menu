@@ -5,7 +5,7 @@ require "#{ENV['UTILS_PROJECT_PATH']}/Lib/Linode.rb"
 domain = ARGV.shift 
 if ! domain
   puts 'Address for the domain being created (domain.tld):'
-  domain = gets
+  domain = gets.chomp
 end
 
 l = Linode::GB.new
