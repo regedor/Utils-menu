@@ -14,9 +14,10 @@ class Linode::GB
 	if File.exist?('config.yml')
 	  @config    = YAML::load(File.open('config.yml'))
 	end
-	@config['linode']['api_key']   ||= 'rf6mpdTZBXNVPpHJajpJeLGAPytY0CBsNBKFK8ABaFHegiUsrQ6UyPDPup5sdnOU'
-	@config['linode']['soa_email'] ||= 'admin@groupbuddies.com'
-	@config['linode']['ttl_sec']   ||= 86400
+	@config 						||= { 'linode' => {} }
+	@config['linode']['api_key']   	||= 'rf6mpdTZBXNVPpHJajpJeLGAPytY0CBsNBKFK8ABaFHegiUsrQ6UyPDPup5sdnOU'
+	@config['linode']['soa_email'] 	||= 'admin@groupbuddies.com'
+	@config['linode']['ttl_sec']   	||= 86400
     @linode = Linode.new(:api_key => @config['linode']['api_key'])
   end
   

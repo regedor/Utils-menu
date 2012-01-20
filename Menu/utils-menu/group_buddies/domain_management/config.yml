@@ -1,0 +1,8 @@
+linode:
+  ttl_sec : 86400
+  soa_email : 'admin@groupbuddies.com'
+  api_key : 'rf6mpdTZBXNVPpHJajpJeLGAPytY0CBsNBKFK8ABaFHegiUsrQ6UyPDPup5sdnOU'
+
+google_apps:
+  password: passwordz3
+
