@@ -1,4 +1,4 @@
-# title: Add Google Apps records to a domain
+# title: Add a new domain to Naruto
 # so: all
 Adds Google Apps records to an existing domain (not
 including the verification token record)
