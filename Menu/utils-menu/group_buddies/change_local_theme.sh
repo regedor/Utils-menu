@@ -9,8 +9,8 @@ fi
 LOCALCONFIG="$PROJECTDIR"/config/config.local
 THEMESPROJECTPATH=$(grep themes_project_path "$PROJECTDIR"/config/config.local | perl -p -e 's/.*"(.*)"/$1/')
 
-rm "$PROJECTDIR"/public/stylesheets/frontend.css
-rm "$PROJECTDIR"/public/stylesheets/backend.css
+rm -f "$PROJECTDIR"/public/stylesheets/frontend.css
+rm -f "$PROJECTDIR"/public/stylesheets/backend.css
 
 echo "Calling '$UTILS_PROJECT_PATH/Menu/utils-menu/group_buddies/change_theme.pl' '$LOCALCONFIG' '$THEMESPROJECTPATH' '$PROJECTDIR'..."
 "$UTILS_PROJECT_PATH"/Menu/utils-menu/group_buddies/change_theme.pl "$LOCALCONFIG" "$THEMESPROJECTPATH" "$PROJECTDIR"
